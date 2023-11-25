@@ -4,7 +4,8 @@
   "description": "API REST for a vet",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx babel-node src/index.js",
+    "dev": "nodemon --exec npx babel-node src/index.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,9 @@
   },
   "homepage": "https://github.com/Agusme/backend-vet#readme",
   "dependencies": {
+    "@babel/cli": "^7.23.4",
+    "@babel/node": "^7.22.19",
+    "@babel/preset-env": "^7.23.3",
     "express": "^4.18.2"
   }
 }
