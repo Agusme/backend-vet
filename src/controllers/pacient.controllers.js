@@ -34,7 +34,7 @@ const getOne = async(req, res) => {
         res.status(200).json(foundPacient)
     } catch (error) {
         console.error(error);
-        res.status(400).json({ message: "Error al crear paciente", error: error.message });
+        res.status(400).json({ message: "Error al obtener un paciente", error: error.message });
     }
 }
 const updatePacient = async (req, res) => {
