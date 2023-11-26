@@ -28,9 +28,8 @@ const appointmentSchema = new Schema({
     time:{
         require: true,
         type:String,
-        minlenght: 2,
-        maxlenght:100,
-        unique:true
+        minlenght: 8,
+        maxlenght:16,
 
     }
 })
