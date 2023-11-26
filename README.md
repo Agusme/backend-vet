@@ -5,7 +5,6 @@
 
 ## Descripción
 > Este es el backend del proyecto [Backend-Veterina](https://github.com/Agusme/backend-vet)
-
 : 
 <br>El presente proyecto de backend es una API REST con node.js, Express y base de datos mongoDB, con servicios de encriptación de password en login/registro con bcrypt y autentificacón/autorización de usuarios con JWT.
 
