@@ -49,6 +49,6 @@ npm run dev
 [Agusme](https://github.com/Agusme)
 [Maxigiordiani](https://github.com/maxigiordani)
 [Sofia Delgado]()
-[Eliana del Rosario Alvarez]()
+[Eliana del Rosario Alvarez](https://github.com/rhoalvarez)
 
 
