@@ -37,18 +37,17 @@ npm run dev
 - morgan
 - nodemon
 
-### Autor
-
-👨‍💻 **Maximiliano Giordani**
-👩‍💻 **Eliana del Rosario Alvarez**
-👩‍💻 **Sofia Delgado**
-👩‍💻 **Agustina Mena**
+### Autors
+- 👨‍💻 **Maximiliano Giordani**
+- 👩‍💻 **Eliana del Rosario Alvarez**
+- 👩‍💻 **Sofia Delgado**
+- 👩‍💻 **Agustina Mena**
 
 
 ### Github:
-[Agusme](https://github.com/Agusme)
-[Maxigiordiani](https://github.com/maxigiordani)
-[Sofia Delgado]()
-[Eliana del Rosario Alvarez](https://github.com/rhoalvarez)
+- [Maxigiordiani](https://github.com/maxigiordani)
+- [Sofia Delgado]()
+- [Eliana del Rosario Alvarez](https://github.com/rhoalvarez)
+- [Agusme](https://github.com/Agusme)
 
 
