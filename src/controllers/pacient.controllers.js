@@ -1,8 +1,8 @@
 import Pacient from "../models/pacient.model"
 
 const showPacients =async(req, res)=>{
-const productList = await Pacient.find()
-res.status(200).json({productList})
+const pacientList = await Pacient.find()
+res.status(200).json({pacientList})
 
 }
 const createdPacient = async (req, res) => {
