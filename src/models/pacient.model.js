@@ -5,39 +5,39 @@ const pacientSchema = new Schema({
         require: true,
         type:String,
         minlenght: 2,
-        maxlenght:100,
+        maxlenght:30,
     },
     email:{
         require: true,
         type:String,
         minlenght: 2,
-        maxlenght:200,
+        maxlenght:30,
         unique:true
     },
     tel:{
         require: true,
         type:String,
         minlenght: 2,
-        maxlenght:100,
+        maxlenght:12,
         unique:true
     },
     petName:{
         require: true,
         type:String,
         minlenght: 2,
-        maxlenght:100
+        maxlenght:30
     },
     specie:{
         require: true,
         type:String,
         minlenght: 2,
-        maxlenght:100
+        maxlenght:30
     },
     race:{
         require: true,
         type:String,
         minlenght: 2,
-        maxlenght:100
+        maxlenght:30
     }
 })
 

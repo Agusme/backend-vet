@@ -8,7 +8,6 @@ if (!errores.isEmpty()) {
     errors: errores.array()
   });
 }
-//le digo que continue con el flujo usando el 
 next();
 }
 
