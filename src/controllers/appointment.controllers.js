@@ -3,7 +3,7 @@ import Appointment from "../models/appointment.model";
 const showAppointments =async(req, res)=>{
 try{
   const appointmentList = await Appointment.find()
-  res.status(200).json({appointmentList}) 
+  res.status(200).json(appointmentList) 
 }catch{
   res.status(404).json({message:'Error searching for requested appointments'})
 }
