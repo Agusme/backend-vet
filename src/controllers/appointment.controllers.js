@@ -1,13 +1,18 @@
 import Appointment from "../models/appointment.model";
 
 const showAppointments =async(req, res)=>{
-const appointmentList = await Appointment.find()
-res.status(200).json({appointmentList}) 
+try{
+  const appointmentList = await Appointment.find()
+  res.status(200).json({appointmentList}) 
+}catch{
+  res.status(404).json({message:'Error searching for requested appointments'})
+}
+
 }
 const createdAppointment = async (req, res) => {
-    try {
-        const { appointmentDetail, veterinarian, pet, date, time} = req.body;
+  const { appointmentDetail, veterinarian, pet, date, time} = req.body;
 
+    try {
         const newAppoinment = new Appointment({
             appointmentDetail,
             veterinarian,
@@ -20,7 +25,7 @@ const createdAppointment = async (req, res) => {
         res.status(201).json({ message: "Turno creado exitosamente" });
     } catch (error) {
         console.error(error);
-        res.status(400).json({ message: "Error al crear el turno", error: error.message });
+        res.status(400).json({ message: "Error al crear el turno", error: error});
     }
 };
 
@@ -31,7 +36,7 @@ const getOneAppointment = async(req, res) => {
         res.status(200).json(foundAppointment)
     } catch (error) {
         console.error(error);
-        res.status(400).json({ message: "Error para recuperar el turno", error: error.message });
+        res.status(404).json({ message: "Error para recuperar el turno", error: error});
     }
 }
 const updateAppointment = async (req, res) => {
@@ -39,7 +44,7 @@ const updateAppointment = async (req, res) => {
       await Appointment.findByIdAndUpdate(req.params.id, req.body);
       res.status(200).json({ message: "Turno modificado" });
     } catch (error) {
-      res.status(400).json({ message: "Error al modificar el turno", error: error });
+      res.status(404).json({ message: "Error al modificar el turno", error: error });
     }
   };
 
@@ -48,7 +53,7 @@ const updateAppointment = async (req, res) => {
       await Appointment.findByIdAndDelete(req.params.id);
       res.status(200).json({ message: "se borro satisafactoriamente" });
     } catch (error) {
-      res.status(400).json({ message: "error al eliminar" });
+      res.status(404).json({ message: "error al eliminar" });
     }
   
   }; 
