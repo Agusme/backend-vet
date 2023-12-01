@@ -17,8 +17,18 @@ const appointmentValidation = [
     .withMessage("La mascota es obligatoria")
     .isLength({ min: 2, max: 30 })
     .withMessage("La mascota debe tener entre 2 y 100 caracteres"),
-  check("date").notEmpty().withMessage("La fecha es obligatoria"),
-  check("time").notEmpty().withMessage("La hora es obligatoria").custom((value) => {
+  check("date")
+  .notEmpty()
+  .withMessage("La fecha es obligatoria")
+  .isISO8601()
+  .toDate()
+  .withMessage("Formato de fecha inválido")
+  .custom((value) => value >= new Date())
+  .withMessage("La fecha no puede estar en el pasado"),
+
+  check("time")
+  .notEmpty()
+  .withMessage("La hora es obligatoria").custom((value) => {
     if (value >= 8 && value <= 16) {
       return true;
     } else {
