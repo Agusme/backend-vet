@@ -1,6 +1,7 @@
 import { Schema } from "mongoose";
 
 const appointmentSchema = new Schema({
+    
     appointmentDetail: {
         required: true,
         type: String,
