@@ -1,3 +1,4 @@
+import { text } from "express";
 import mongoose,{Schema} from "mongoose";
 
 const appointmentSchema = new Schema({
@@ -21,7 +22,7 @@ const appointmentSchema = new Schema({
     },
     date:{
         require: true,
-        type: Date,
+        type: String,
     },
     time:{
         require: true,
