@@ -21,7 +21,7 @@ const appointmentSchema = new Schema({
     },
     date:{
         require: true,
-        type:String,
+        type:Date,
         minlenght: 2,
         maxlenght:30,
     },
