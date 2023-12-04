@@ -19,12 +19,14 @@ const appointmentValidation = [
     .withMessage("La mascota debe tener entre 2 y 100 caracteres"),
   check("date").notEmpty().withMessage("La fecha es obligatoria"),
   check("time").notEmpty().withMessage("La hora es obligatoria").custom((value) => {
-    if (value >= 8 && value <= 16) {
+    const hour = parseInt(value.split(":")[0], 10);
+    if (hour >= 8 && hour <= 16) {
       return true;
     } else {
-      throw new Error("La hora debe estar entre las 8:00 hs y 16:00 hs");
+      return Promise.reject("La hora debe estar entre las 8:00 hs y 16:00 hs");
     }
   }),
+  
   (req, res, next) => {
     validatinresults(req, res, next);
   },
