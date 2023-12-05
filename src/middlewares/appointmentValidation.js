@@ -20,7 +20,7 @@ const appointmentValidation = [
   check("date").notEmpty().withMessage("La fecha es obligatoria"),
   check("time").notEmpty().withMessage("La hora es obligatoria").custom((value) => {
     const hour = parseInt(value.split(":")[0], 10);
-    if (hour >= 8 && hour <= 17) {
+    if (hour >= 8 && hour <= 16) {
       return true;
     } else {
       return Promise.reject("La hora debe estar entre las 8:00 hs y 16:00 hs");
