@@ -21,7 +21,7 @@ const createdAppointment = async (req, res) => {
 
       if (existingAppointmentHour>=2){
         return res.status(400).json({
-          message: "Ya hay dos citas programadas para esta hora en este día.",
+          message: "No hay turno disponible en ese horario.",
         });
       }
 
