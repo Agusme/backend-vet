@@ -56,6 +56,19 @@ const getOneAppointment = async(req, res) => {
 }
 const updateAppointment = async (req, res) => {
     try {
+      const { date, time } = req.body;
+
+    const existingAppointmentHour = await Appointment.countDocuments({
+      date,
+      time,
+      _id: { $ne: req.params.id }, 
+    });
+
+    if (existingAppointmentHour >= 2) {
+      return res.status(400).json({
+        message: "No hay turno disponible en ese horario.",
+      });
+    }
       await Appointment.findByIdAndUpdate(req.params.id, req.body);
       res.status(200).json({ message: "Turno modificado" });
     } catch (error) {
