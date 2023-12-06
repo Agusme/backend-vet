@@ -13,6 +13,21 @@ const createdAppointment = async (req, res) => {
   const { appointmentDetail, veterinarian, pet, date, time} = req.body;
 
     try {
+      const  existingAppointmentHour = await Appointment.countDocuments({
+        date,
+        time,
+      });
+
+
+      if (existingAppointmentHour>=2){
+        return res.status(400).json({
+          message: "Ya hay dos citas programadas para esta hora en este día.",
+        });
+      }
+
+
+
+
         const newAppoinment = new Appointment({
             appointmentDetail,
             veterinarian,
